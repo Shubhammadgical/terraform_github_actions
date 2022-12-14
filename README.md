@@ -27,9 +27,9 @@ I took inspiration from this [article](https://developer.hashicorp.com/terraform
 
 # Set up a GitHub repository
 
+Creake new repository, navigate to "Settings" then "Secrets". Create a new secret named TF_API_TOKEN, setting the Terraform Cloud API token you created in the previous step as the value.
 
-
-
+![secrets](https://user-images.githubusercontent.com/101810595/207567248-5356eb9e-f985-419e-a3fc-89c53e9f589c.gif)
 
 
 
