@@ -67,6 +67,16 @@ curl ec2-54-187-5-177.us-west-2.compute.amazonaws.com:8080
 
 # Steps to Destroy resources
 
+1. Open Terraform Cloud, then open your workspace.
+
+2. Click Workspace settings, then click in the Destruction and Deletion.
+
+3. Click Queue destroy plan button. Provide workspace name then then click button. Then click conform and apply button.
+
+![Screenshot_20221214_161353](https://user-images.githubusercontent.com/101810595/207574396-9a121d8d-2332-4950-814f-edb00d380c20.png)
+
+4. For deleting workspace click Delete from Terraform Cloud button in Destruction and Deletion section and follow same steps.
+
 
 
 
