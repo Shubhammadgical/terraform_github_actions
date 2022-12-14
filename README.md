@@ -27,16 +27,45 @@ I took inspiration from this [article](https://developer.hashicorp.com/terraform
 
 # Set up a GitHub repository
 
-Creake new repository, navigate to "Settings" then "Secrets". Create a new secret named TF_API_TOKEN, setting the Terraform Cloud API token you created in the previous step as the value.
+1. Creake new repository, navigate to "Settings" then "Secrets". Create a new secret named TF_API_TOKEN, setting the Terraform Cloud API token you created in the previous step as the value.
 
 ![secrets](https://user-images.githubusercontent.com/101810595/207567248-5356eb9e-f985-419e-a3fc-89c53e9f589c.gif)
 
+2. Copy .github, .gitignore, and main.tf file from this [repo](https://github.com/hashicorp/learn-terraform-github-actions)  in your repo.
 
+3. Create a new branch in your repo name update-tfc-backend.
 
+4. Open main.tf file and give your organization name in line no. 15 which you created in Terraform Cloud Account. 
 
+5. Run below commands:
 
+```
+git add .
+git commit -m 'Point backend to correct TFC org and workspace'
+git push
+```
 
+6. Generate a pull request from the update-tfc-backend branch. From the base repository drop-down, choose your repository and main branch.
 
+7. Navigate to your pull request in GitHub. Your PR will trigger the Terraform Actions workflow. When the workflow completes, it will add a comment with the outcome of each step and a speculative plan.
+
+![review](https://user-images.githubusercontent.com/101810595/207570548-6159d231-21b8-4844-9aa8-8ffbab839431.gif)
+
+8. You can track the status of the apply job through GitHub Actions or Terraform Cloud. In GitHub, go to "Actions", then select the pull request you just merged.
+
+Then, click on the "Terraform" workflow. Notice how the "Terraform Plan", "Update Pull Request" and "Terraform Plan Status" steps have been skipped.
+
+Expand the "Terraform Apply" step. Terraform should have created the two resources and displayed the EC2 instance's address.
+
+![apply](https://user-images.githubusercontent.com/101810595/207571170-7581f16d-927d-46dc-ae31-0359f95c1eca.gif)
+
+9. Verify that the EC2 instance is publicly available. Remember to replace the address below with the one in Terraform's output. Run below command in your terminal.
+
+```
+curl ec2-54-187-5-177.us-west-2.compute.amazonaws.com:8080
+```
+
+# Steps to Destroy resources
 
 
 
