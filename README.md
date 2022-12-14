@@ -59,6 +59,8 @@ Expand the "Terraform Apply" step. Terraform should have created the two resourc
 
 ![apply](https://user-images.githubusercontent.com/101810595/207571170-7581f16d-927d-46dc-ae31-0359f95c1eca.gif)
 
+![Screenshot_20221214_160316](https://user-images.githubusercontent.com/101810595/207574737-59f37561-933b-462d-9792-d26fda850661.png)
+
 9. Verify that the EC2 instance is publicly available. Remember to replace the address below with the one in Terraform's output. Run below command in your terminal.
 
 ```
